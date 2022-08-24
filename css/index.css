@@ -1,0 +1,244 @@
+/*----------GENERAL STYLE----------*/
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    color: whitesmoke;
+}
+.growtext:hover {
+    transform: scale(1.5);      /* Makes the element increase 1.5 times in size */
+    transition: transform .5s;  /* Makes the transform effect last 1.5 seconds */
+    text-shadow: 3px 3px 5px white;
+}
+h1, h2, h3, h4 {
+    font-variant: small-caps;
+}
+a:link, a:visited {
+    color: whitesmoke;
+}
+.stylebox {
+    padding: 10px;
+    background: rgba(0,0,0,.5);
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.5), -3px -3px 5px rgba(0,0,0,.5); 
+}
+.stylebox:hover {
+    backdrop-filter: blur(2px) /*brightness(30%)*/; 
+    -webkit-backdrop-filter:  blur(2px);
+    -moz-backdrop-filter: blur(2px);
+}
+/*----------END GENERAL STYLE----------*/
+
+/*----------BACKGROUND ANIMATION----------*/
+.bg {
+    width: 100%;
+    height: 100%;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, 
+        rgb(221, 245, 246) 0%, 
+        rgb(99, 99, 222) 25%, 
+        rgb(193, 255, 192) 51%, 
+        rgba(0,0,0, 1)); 
+    animation: backgroundfade 20s ease infinite;
+    /*
+    rgba(0,0,0,1) 0%, 
+    rgba(0,0,40,1) 25%, 
+    rgb(30, 0, 45) 51%, 
+    rgba(0,0,0, 1));  
+    */
+}
+
+@keyframes backgroundfade { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+/*----------END BACKGROUND ANIMATION----------*/
+
+/*-----------MENU----------*/
+.menu {
+    text-align: right;
+}
+.menu ul {
+    list-style: none;
+    display: inline;
+}
+.menu li {
+    display: inline-block;
+    padding: 20px;
+    font-weight: 600;
+}
+.menu li input {
+    border-radius: 10px;
+    text-align: right;
+    box-shadow: inset 1px 2px 10px 0 rgba(0,0,0,.5);
+}
+.menu li input:hover {
+    background-color: gainsboro;
+}
+.logo {
+    position: absolute;
+    display: inline;
+    top: 3px;
+    left: 3px;
+}
+/*-----------END MENU----------*/
+
+/*----------HEADER----------*/
+#bannervideo {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+.bannertitle {
+    color: whitesmoke;
+    margin: 3vw;
+}
+.bannertitle h1 {
+    font-family: 'Corinthia', cursive;
+    font-weight:600;
+    font-size: 10vw;
+    font-variant: normal;
+    animation: titletraverse 80s linear 0s infinite alternate-reverse; 
+}
+@keyframes titletraverse {
+    0, 100% {
+        transform: translatex(0px);
+    }
+    50% {
+        transform: translatex(35vw);
+    }
+}
+.bannertitle h3 {
+    text-align: center;
+}
+/*----------END HEADER----------*/
+
+/*----------INTRO----------*/
+.intro-container {
+    background: rgba(0,0,0,.75);
+    padding: 10px;
+}
+#intro {
+    text-align: center;
+    padding: 30px;
+}
+/*----------END INTRO----------*/
+
+/*----------ROW & COLUMN STYLE----------*/
+.row {
+    padding: 10px;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.column1 {
+    width: 60%;
+}
+.column2 {
+    width: 40%;
+}
+.row:after {
+	content: ""; 
+    display: table; 
+    clear: both; /*Clear any other elements from floating on the left or the right of an element*/
+}
+/*----------END ROW & COLUMN STYLE----------*/
+
+
+/*----------GITHUB SECTION----------*/
+#github {
+    padding: 10px;
+}
+.github-text {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 90%;
+}
+.github-text a:link, .github-container a:visited {
+    text-decoration: none;
+}
+.github-text p a:link, .github-text p a:visited {
+    color:lightskyblue;
+}
+.github-img {
+    text-align: center;
+}
+.github-img img {
+    height: 40vh;
+    border-radius: 10px;
+}
+
+/*END GITHUB SECTION*/
+
+/*----------ABOUT----------*/
+#about {
+    padding: 10px;
+}
+.about-text {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 90%;
+}
+.about-text p {
+    text-align: justify;
+}
+.about-img {
+    text-align: center;
+}
+.about-img img {
+    height: 40vh;
+    filter: grayscale(100%);
+    border-radius: 10px;
+}
+.about-text ul {
+    list-style: none;
+    margin-left: -45px;
+}
+/*END ABOUT*/
+
+/*----------CONTACT FORM----------*/
+#contact {
+    padding: 10px;
+}
+.contact-container {
+    margin: 0 auto;
+    background-image: url("../img/contact.jpg");
+    background-size: contain;
+}
+.contact-container h1{
+    text-align: center;
+}
+.contact-form input {
+    width: 50%;
+    min-width: 75px;
+    border-radius: 10px;
+    box-shadow: inset 1px 2px 10px 0 rgba(0,0,0,.5);
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+.contact-form input:hover {
+    background-color: gainsboro;
+    box-shadow: 1px 2px 6px white, -1px -2px 6px white;
+}
+.contact-form input:nth-child(6) {
+    width: 100%;
+}
+#contactsubmit {
+    display: block;
+    width: 40px;
+    margin: 0 auto;
+}
+/*----------END CONTACT FORM----------*/
+
+/*----------FOOTER----------*/
+footer {
+    padding: 10px;
+    background-color: black;
+    text-align: center;
+}
+/*----------END FOOTER----------*/
+
