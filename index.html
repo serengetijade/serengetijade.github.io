@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Corinthia&family=Roboto&display=swap" rel="stylesheet">
-	<title>Serengeti Jade's Portfolio</Title>
+	<script src="./js/index.js"></script>
+    <title>Serengeti Jade's Portfolio</Title>
 	<style></style>
 </head>
 <body>
@@ -128,7 +129,7 @@
                     </div>
                         
                     <div class="contact-form">
-                        <form action="https://formspree.io/f/mdojkaqy" method="post">
+                        <form name="contact" action="https://formspree.io/f/mdojkaqy" method="post" onsubmit="return validateForm()">
                             <h3>Your Name and Info</h3>
                             <input class="contact-input" type="text" name="name" placeholder="Please enter your name">
                             <input class="contact-input" type="email" name="email" placeholder="Please enter your email">
