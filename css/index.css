@@ -1,11 +1,14 @@
 /*----------GENERAL STYLE----------*/
 html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 body {
     font-family: 'Roboto';
-    margin: 0;
+    margin: 0%;
     color: whitesmoke;
+    overflow-x: hidden; /* Prevents the horizontal scroll bar from appearing when anything is hovered over */
+
 }
 .growtext:hover {
     transform: scale(1.5);      /* Makes the element increase 1.5 times in size */
@@ -19,11 +22,12 @@ a:link, a:visited {
     color: whitesmoke;
 }
 .stylebox {
+    margin: 10px;
     padding: 10px;
-    background: rgba(0,0,0,.5);
     border-radius: 10px;
     width: fit-content;
-    box-shadow: 3px 3px 5px rgba(0,0,0,.5), -3px -3px 5px rgba(0,0,0,.5); 
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 0 10px rgba(0,0,0,.5); 
 }
 .stylebox:hover {
     backdrop-filter: blur(2px) /*brightness(30%)*/; 
@@ -59,8 +63,14 @@ a:link, a:visited {
 /*----------END BACKGROUND ANIMATION----------*/
 
 /*-----------MENU----------*/
-.menu {
+.menu-bar{
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
     text-align: right;
+    width: 100%;
+    background-color: transparent;
 }
 .menu ul {
     list-style: none;
@@ -68,7 +78,7 @@ a:link, a:visited {
 }
 .menu li {
     display: inline-block;
-    padding: 20px;
+    padding: 5px 20px;
     font-weight: 600;
 }
 .menu li input {
@@ -92,8 +102,9 @@ a:link, a:visited {
     position: fixed;
     left: 0;
     bottom: 0;
-    min-width: 100%;
     z-index: -1;
+    vertical-align: middle;
+    min-width: 100%;
 }
 .bannertitle {
     color: whitesmoke;
@@ -104,22 +115,12 @@ a:link, a:visited {
     font-weight:600;
     font-size: 10vw;
     font-variant: normal;
-    animation: titletraverse 80s linear 0s infinite alternate-reverse; 
-}
-@keyframes titletraverse {
-    0, 100% {
-        transform: translatex(0px);
-    }
-    50% {
-        transform: translatex(35vw);
-    }
+    text-align: center;
 }
 .bannertitle h3 {
     text-align: center;
 }
-/*----------END HEADER----------*/
-
-/*----------INTRO----------*/
+/*INTRO*/
 .intro-container {
     background: rgba(0,0,0,.75);
     padding: 10px;
@@ -128,21 +129,22 @@ a:link, a:visited {
     text-align: center;
     padding: 30px;
 }
-/*----------END INTRO----------*/
+/*END INTRO*/
+/*----------END HEADER----------*/
 
 /*----------ROW & COLUMN STYLE----------*/
 .row {
-    padding: 10px;
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
+    padding: 10px;
     overflow: hidden;
 }
 .column1 {
-    width: 60%;
+    width: 50%;
 }
 .column2 {
-    width: 40%;
+    width: 50%;
 }
 .row:after {
 	content: ""; 
@@ -201,27 +203,141 @@ a:link, a:visited {
     list-style: none;
     margin-left: -45px;
 }
-/*END ABOUT*/
+/*----------END ABOUT----------*/
+
+/*----------TECHNOLOGIES & SKILLS----------*/
+#tech {
+    padding: 10px;
+}
+.tech-text {
+    margin: 10px auto;
+}
+.tech-text h1{
+    margin: 0;
+    text-align: center;
+}
+.tech-text td{
+    padding: 0 30px;
+    vertical-align: top;
+}
+
+/*SLIDESHOW*/
+/*SLIDESHOW-CONTAINER*/
+.slideshow-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    left: 0;
+    right: 0;
+    max-width: 33%;  /*Set the width of the slideshow*/   
+}
+/*IMAGES*/
+.mySlides img {
+    border-radius: 10px;
+    vertical-align: middle;
+}
+/*HIDE IMAGES BY DEFAULT*/
+.mySlides {
+    display: none;
+}
+
+/*NEXT AND PREVIOUS BUTTONS*/
+.prev, .next {
+    position: absolute;
+    margin-top: -22px;
+    top: 50%;
+    padding: 16px;
+    cursor:pointer;
+    width: auto;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+/*POSITION OF THE NEXT BUTTON TO THE RIGHT*/
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/*ON HOVER, ADD A BLACK BACKGROUND COLOR WITH A LITTLE BIT SEE-THROUGH*/
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,.8);
+}
+/*CAPTION TEXT*/
+.slide-text {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;    
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgba(0,0,0,.5);
+}
+/*DOTS, BULLETS, INDICATORS*/
+.dot {
+    display: inline-block;
+    margin: 0 2px;
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+/*FADING ANIMATION*/
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opadity: .4}
+    to {opacity: 1}
+}
+/*END SLIDESHOW*/
+/*----------END TECHNOLOGIES & SKILLS----------*/
 
 /*----------CONTACT FORM----------*/
 #contact {
-    padding: 10px;
+    display: none;  /*HIDE BY DEFAULT*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    top: 0;
+    left:0;
 }
 .contact-container {
-    margin: 0 auto;
+    position: fixed;
+    z-index: 5;     /*Ensure it sits on top of other elements*/
     background-image: url("../img/contact.jpg");
-    background-size: contain;
+    background-size: cover;
+    /*Center the contact-container within the view window*/
+    width: 550px;   
+    height: 450px;  
+    left: 50%;
+    margin-left: -275px; /*Subtract Half the width of the form to center it  horizontally*/
+    top: 50%;
+    margin-top: -225px; /*Subtract Half the height of the form to center it vertically*/
 }
-.contact-container h1{
+.contact-text {
     text-align: center;
 }
 .contact-form input {
+    margin-bottom: 10px;
+    padding: 5px 0;
     width: 50%;
     min-width: 75px;
     border-radius: 10px;
     box-shadow: inset 1px 2px 10px 0 rgba(0,0,0,.5);
-    padding: 5px 0;
-    margin-bottom: 10px;
 }
 .contact-form input:hover {
     background-color: gainsboro;
@@ -230,12 +346,28 @@ a:link, a:visited {
 .contact-form input:nth-child(6) {
     width: 100%;
 }
-#contactsubmit {
-    display: block;
-    width: 40px;
+#contactsubmit, #contactcancel{
+    display: inline-block;
+    width: 60px;
     margin: 0 auto;
 }
 /*----------END CONTACT FORM----------*/
+/*CONTACT-BUTTON*/
+#contact-button {
+    margin: 10px;
+    text-align: center;
+}
+#contact-button button{
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    font-family: 'Corinthia', cursive;
+    font-size: 35px;
+}
+#contact-button button:hover {
+    background-color: rgba(0,0,0,.5);
+}
+/*END CONTACT-BUTTON*/
 
 /*----------FOOTER----------*/
 footer {

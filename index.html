@@ -8,20 +8,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Corinthia&family=Roboto&display=swap" rel="stylesheet">
-	<script src="./js/index.js"></script>
+	<script src="./js/index.js" defer></script>
     <title>Serengeti Jade's Portfolio</Title>
 	<style></style>
 </head>
 <body>
 	<nav>
         <!--MENU BAR-->
-        <div>
+        <div class="menu-bar" id="menu-bar">
             <ul class="menu">
                 <a href="#github"><li class="growtext">GitHub</li></a>
                 <a href="#about"><li class="growtext">About</li></a>
-                <a href="#contact"><li class="growtext">Contact</li></a>
-                <li><input type="search" placeholder="Search"></li>
-            </ul>
+                <a href="#tech"><li class="growtext">Technologies</li></a>
+                <li class="growtext" onclick="openForm()">Contact</li>
+                <!--
+                    <li><input type="search" placeholder="Search"></li>
+                -->
+                </ul>
         </div>
         <div>
             <div class="logo">
@@ -39,7 +42,7 @@
                 <div>
                     <video id="bannervideo" loop muted autoplay>
                         <source src="vid/banner1.mp4" type="video/mp4">
-                        <img src="img/banner.jpg" title="Your browser does not support HTML5 video" alt="Connections in Light">
+                        <img src="img/banner.jpg" title="Your browser does not support HTML5 video" alt="Tech planet">
                         Your browser does not support HTML5 video.
                     </video>
                 </div>
@@ -53,22 +56,104 @@
         </div>
         <!--END BANNER-->
 
+        <!--INTRO-->
+        <div class="intro-container">
+            <div id="intro">
+                <p>Hello, World. Welcome to my portfolio website. Here, I will tell you about my background and experience.</p>
+                <p>Thank you for your time and consideration.</p>
+            </div>            
+        </div>
+        <!--END INTRO-->
     </header>
     
 	<main>
-        <!--INTRO-->
-        <div class="intro-container">
-            <div>
-                <div id="intro">
-                    <p>Hello, World. Welcome to my portfolio website. Here, I will tell you about my background and experience.</p>
-                    <p>Thank you for your time and consideration.</p>
-                </div>
-            </div>
-        </div>
-        <!--END INTRO-->
 
-        <div class="bg">
+        <div class="bg">  <!--Background container for color-changing background animation-->
             
+            <!--TECHNOLOGY & SKILLS-->
+            <div id="tech">
+
+                <div class="tech-text stylebox">
+                    <table><h1>Technologies &amp; Skills</h1>
+                        <hr>
+                        <tr>
+                            <td><h2>Programming Languages</h2>
+                                <ul>
+                                    <li>HTML &amp; CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Python</li>
+                                    <li>SQL</li>
+                                    <li>C#</li>
+                                </ul> 
+                            </td>
+                            <td><h2>Libraries</h2>
+                                <ul>
+                                    <li>Bootstrap</li>
+                                    <li>jQuery</li>
+                                </ul>
+                            </td>                      
+                            <td><h2>IDEs</h2>
+                                <ul>
+                                    <li>Visual Studio Code</li>
+                                    <li>Visual Studio</li>
+                                </ul>
+                            </td>
+                            <td><h2>Version Control</h2>
+                                <ul>
+                                    <li>Git &amp; GitHub</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>    
+
+                <!--SLIDESHOW-->
+                <div class="slideshow-container stylebox">
+                    <!--Slide #1-->
+                    <div class="mySlides fade">
+                        <img src="img/technologies/htmlcssjs.jpeg" style="width:100%" alt="HTML, CSS, and JavaScript logos">
+                        <div class="slide-text">HTML, CSS, and JavaScript</div>
+                    </div>
+                    <!--Slide #2-->
+                    <div class="mySlides fade">
+                        <img src="img/technologies/python.jpg" style="width:100%" alt="Python logo">
+                        <div class="slide-text">Python</div>
+                    </div>
+                    <!--Slide #3-->
+                    <div class="mySlides fade">
+                        <img src="img/technologies/SQL.jpg" style="width:100%" alt="SQL logo">
+                        <div class="slide-text">SQL</div>
+                    </div>
+                    <!--Slide #4-->
+                    <div class="mySlides fade">
+                        <img src="img/technologies/csharp.jpg" style="width:100%" alt="C# logo">
+                        <div class="slide-text">C#</div>
+                    </div>
+                    <!--Slide #5-->
+                    <div class="mySlides fade">
+                        <img src="img/technologies/rotaryphone.jpg" style="width:100%; filter: grayscale();" alt="Rotary Phone">
+                        <div class="slide-text" onclick="openForm()" style="cursor: pointer">Contact me to be part of your next project.</div>
+                    </div>
+
+                    <!--Next and Previous Buttons-->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                
+                <!--Dots/Circles-->
+                <br>
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span> <!--Assigns a parameter value-->
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+                <!--END SLIDESHOW-->
+                
+            </div>
+            <!--END SKILLS & TECHNOLOGY-->
+
             <!--GITHUB SECTION-->
             <div id="github">
                 <div class="row">
@@ -99,14 +184,7 @@
                                 I'm passionate about making the planet a better place through technology.
                                 <br>
                                 <br>Outside of work, I enjoy hiking and camping, reading with tea, gardening for the bees, and international travel. 
-                            </p>
-                            <h2>Skills &amp; Technologies</h2>
-                            <ul>
-                                <li>C#</li>
-                                <li>Python</li>
-                                <li>JavaScript</li>
-                                <li>HTML &amp; CSS</li>
-                            </ul>                            
+                            </p>                           
                         </div>
                     </div>
 
@@ -118,8 +196,8 @@
                 </div>
             </div>
             <!--END ABOUT-->
-
-
+            
+            
             <!--CONTACT FORM-->
             <div id="contact">
                 <div class="contact-container stylebox">
@@ -131,16 +209,22 @@
                     <div class="contact-form">
                         <form name="contact" action="https://formspree.io/f/mdojkaqy" method="post" onsubmit="return validateForm()">
                             <h3>Your Name and Info</h3>
-                            <input class="contact-input" type="text" name="name" placeholder="Please enter your name">
-                            <input class="contact-input" type="email" name="email" placeholder="Please enter your email">
-                            <input class="contact-input" type="tel" name="phone" placeholder="Please enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <input class="contact-input" type="text" name="Name" placeholder="Please enter your name">
+                            <input class="contact-input" type="email" name="Email" placeholder="Please enter your email">
+                            <input class="contact-input" type="tel" name="Phone" placeholder="Please enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                             <h3>Message</h3>
-                            <input class="contact-input" type="text" name="message" placeholder="Enter your message here">
+                            <input class="contact-input" type="text" name="Message" placeholder="Enter your message here">
                             <input class="contact-input" id="contactsubmit" type="submit" name="Submit">
+                            <input class="contact-input" id="contactcancel" type="button" name="Cancel" value="Cancel" onclick="closeForm()">
                         </form>
                     </div>                          
                 </div>
             </div>
+            
+            <div id="contact-button">
+                <button onclick="openForm()">Contact Me</button>
+            </div>
+            
             <!--END CONTACT FORM-->
 
         </div>
