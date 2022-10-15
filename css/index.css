@@ -11,6 +11,7 @@ body {
 }
 main {
     background-color: #fff;
+    width: 100%;
 }
 .growtext:hover {
     transform: scale(1.5);      /* Makes the element increase 1.5 times in size */
