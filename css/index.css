@@ -42,10 +42,10 @@ a:link, a:visited {
     height: 100%;
     background-size: 300% 300%;
     background-image: linear-gradient(-45deg, 
-        rgb(221, 245, 246) 0%, 
-        rgb(99, 99, 222) 25%, 
-        rgb(193, 255, 192) 51%, 
-        rgba(0,0,0, 1)); 
+        rgba(221, 245, 246,.75) 0%, 
+        rgba(99, 99, 222,.75) 25%, 
+        rgba(193, 255, 192,.75) 51%, 
+        rgba(0,0,0,.75)); 
     animation: backgroundfade 20s ease infinite;
     /*
     rgba(0,0,0,1) 0%, 
