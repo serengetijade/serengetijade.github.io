@@ -11,6 +11,7 @@ body {
 }
 main {
     background-color: #fff;
+    min-width: 100vw;
 }
 .growtext:hover {
     transform: scale(1.5);      /* Makes the element increase 1.5 times in size */
@@ -105,7 +106,7 @@ a:link, a:visited {
     left: 0;
     bottom: 0;
     z-index: -1;
-    vertical-align: middle;
+    vertical-align: bottom;
     min-width: 100%;
 }
 .bannertitle {
@@ -373,7 +374,7 @@ a:link, a:visited {
 }
 #contact-button button:hover {
     background-color: rgba(0,0,0,.5);
-    box-shadow: 0px 3px 8px 8px white;
+    box-shadow: 0 0 10px white;
 }
 /*END CONTACT-BUTTON*/
 
