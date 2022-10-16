@@ -206,7 +206,7 @@
             
             
             <!--CONTACT FORM-->
-            <div id="contact" class="bg">
+            <div id="contact" class="bg ">
                 <div class="contact-container stylebox">
                     <div class="contact-text">
                         <h1>Contact Form</h1>
@@ -220,9 +220,11 @@
                             <input class="contact-input" type="email" name="Email" placeholder="Please enter your email">
                             <input class="contact-input" type="tel" name="Phone" placeholder="Please enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                             <h3>Message</h3>
-                            <input class="contact-input" type="text" name="Message" placeholder="Enter your message here">
-                            <input class="contact-input" id="contactsubmit" type="submit" name="Submit">
-                            <input class="contact-input" id="contactcancel" type="button" name="Cancel" value="Cancel" onclick="closeForm()">
+                            <textarea class="contact-input" name="Message" placeholder="Enter your message here" rows="3" cols="72"></textarea>
+                            <div class="contact-buttons">
+                                <input class="contact-input" id="contactsubmit" type="submit" name="Submit">
+                                <input class="contact-input" id="contactcancel" type="button" name="Cancel" value="Cancel" onclick="closeForm()">
+                            </div>
                         </form>
                     </div>                          
                 </div>

@@ -1,4 +1,5 @@
 //MENU SCROLL
+//change the color of the menu bar if the user scrolls below the header
 window.onscroll = function() {menuScroll()};
 
 function menuScroll() {
@@ -11,7 +12,6 @@ function menuScroll() {
         document.getElementById("menu-bar").style.backgroundColor = "initial";
     }
 };
-
 
 //SLIDESHOW
 let slideIndex = 1;     //When you load the document, slideIndex starts at slide index position 1
@@ -65,6 +65,17 @@ function openForm() {
 function closeForm() {
   document.getElementById("contact").style.display = "none";
 }
+//CLOSE CONTACT FORM IF USER CLICKS OUTSIDE THE CONTACT-CONTAINER WINDOW
+document.addEventListener(
+  "click",
+  function(event){
+    if (
+      event.target.matches("#contactcancel") || 
+      event.target.matches("#contact")
+      ) 
+      {closeForm()}
+    }
+);
 //END STICKY CONTACT FORM
-
+    
 //END CONTACT FORM
