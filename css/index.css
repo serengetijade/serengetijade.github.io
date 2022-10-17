@@ -13,16 +13,25 @@ main {
     background-color: #fff;
     min-width: 100vw;
 }
-.growtext:hover {
-    transform: scale(1.5);      /* Makes the element increase 1.5 times in size */
-    transition: transform .5s;  /* Makes the transform effect last 1.5 seconds */
-    text-shadow: 3px 3px 5px white;
-}
 h1, h2, h3, h4 {
     font-variant: small-caps;
 }
 a:link, a:visited {
     color: whitesmoke;
+    text-decoration: none;
+}
+.hl, .hl a:link, .hl a:visited{
+    /*hl stands for highlight color*/
+    color:lightskyblue;
+    text-decoration: none;
+}
+a:link:hover, a:visited:hover, .hl a:link:hover, .hl a:visited:hover, .menu li:hover{
+    text-shadow: 3px 3px 5px white;
+} 
+.growtext:hover {
+    transform: scale(1.5);      /* Makes the element increase 1.5 times in size */
+    transform-origin: center;
+    transition: transform .5s;  /* Makes the transform effect last 1.5 seconds */
 }
 .stylebox {
     margin: 10px;
@@ -135,7 +144,7 @@ a:link, a:visited {
 /*END INTRO*/
 /*----------END HEADER----------*/
 
-/*----------ROW & COLUMN STYLE----------*/
+/*----------ROW & COLUMN STYLING----------*/
 .row {
     display: flex;
     display: -webkit-flex;
@@ -143,11 +152,13 @@ a:link, a:visited {
     padding: 10px;
     overflow: hidden;
 }
-.column1 {
-    width: 50%;
-}
 .column2 {
     width: 50%;
+}
+.column3{
+    width: 30%;
+    min-width: 30%;
+    padding: 10px;
 }
 .row:after {
 	content: ""; 
@@ -169,9 +180,6 @@ a:link, a:visited {
 .github-text a:link, .github-container a:visited {
     text-decoration: none;
 }
-.github-text p a:link, .github-text p a:visited {
-    color:lightskyblue;
-}
 .github-img {
     text-align: center;
 }
@@ -183,16 +191,11 @@ a:link, a:visited {
 /*END GITHUB SECTION*/
 
 /*----------ABOUT----------*/
-#about {
-    padding: 10px;
+.about-container{
+    background-color: black;
 }
-.about-text {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 90%;
-}
-.about-text p {
-    text-align: justify;
+.about{
+    padding: 20px;
 }
 .about-img {
     text-align: center;
@@ -201,10 +204,6 @@ a:link, a:visited {
     height: 40vh;
     filter: grayscale(100%);
     border-radius: 10px;
-}
-.about-text ul {
-    list-style: none;
-    margin-left: -45px;
 }
 /*----------END ABOUT----------*/
 

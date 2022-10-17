@@ -17,9 +17,9 @@
         <!--MENU BAR-->
         <div class="menu-bar" id="menu-bar">
             <ul class="menu">
+                <a href="#tech"><li class="growtext">Technologies</li></a>
                 <a href="#github"><li class="growtext">GitHub</li></a>
                 <a href="#about"><li class="growtext">About</li></a>
-                <a href="#tech"><li class="growtext">Technologies</li></a>
                 <li class="growtext" onclick="openForm()">Contact</li>
                 <!--
                     <li><input type="search" placeholder="Search"></li>
@@ -164,11 +164,11 @@
             <!--GITHUB SECTION-->
             <div id="github">
                 <div class="row">
-                    <div class="column1" >
+                    <div class="column2" >
                         <div class="github-text stylebox">
                             <h1><a href="https://github.com/serengetijade">GitHub</a></h1>
                             <p>View my coding projects on my GitHub profile here:</p>
-                            <p class="growtext"><a href="https://github.com/serengetijade">Jade's GitHub Portfolio</a></p>
+                            <p class="growtext hl"><a href="https://github.com/serengetijade">Jade's GitHub Portfolio</a></p>
                         </div>
                     </div>
 
@@ -182,27 +182,49 @@
             <!--END GITHUB SECTION-->
 
             <!--ABOUT-->
-            <div id="about">
-                <div class="row">
-                    <div class="column1">
-                        <div class="about-text stylebox">
-                            <h1>About</h1>
-                            <p>I'm a student at The Tech Academy (Portland,OR), with a background in customer service and financial sales. 
-                                I'm passionate about making the planet a better place through technology.
+            <div class="about-container">
+                <div class="about" id="about">
+                    <div class="row">
+                        <div class="column2">
+                            <h1>A global perspective and eperierience
+                            <br>to contribute to your business</h1>
+                            <p>I am a student at The Tech Academy (Portland,OR). I have BA in Finance from <a href="https://www.bentley.edu/">Bentley University</a>.
+                                <br>5+ years in financial management and sales and 20+ in customer service. 
+                                <br>My hope is to make the planet a better place through technology -if we can encourage people to consume digital content, rather than physical goods, maybe we can save the environment.
                                 <br>
-                                <br>Outside of work, I enjoy hiking and camping, reading with tea, gardening for the bees, and international travel. 
-                            </p>                           
+                                <br>Outside of work, I enjoy hiking and camping, reading with a giant mug of tea, gardening for the bees, and international travel. 
+                            </p>   
+                            <div>
+                                <h2 class="hl"><a href="https://www.linkedin.com/in/serengeti-jade-abreu-906ab2249/">Connect with me on LinkedIn</a></h2>
+                            </div>
+                        </div>
+                        <div class="column2">
+                            <div class="about-img">
+                                <img src="img/profile1.jpg" alt="Hello, Jade">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="column2">
-                        <div class="about-img">
-                            <img src="img/profile1.jpg" alt="Hello, Jade">
+                    <div class="row">
+                        <div class="column3">
+                            <h2 class="hl">Problem Solving</h2>
+                            <p>Independantly managed a $14M investment portfolio and office branch as a financial advisor.</p>
+                        </div>
+                        <div class="column3">
+                            <h2 class="hl">Determination</h2>
+                            <p>The daughter of a commercial fisherman, I was the first in the family to graduate from college. And did it debt free by working 4 jobs from the age of 14 through graduation.</p>
+                        </div>
+                        <div class="column3">
+                            <h2 class="hl">Curiosity</h2>
+                            <p>Explored 7 continents before turning 30. Traveld solo to more than 70 countries.</p>
                         </div>
                     </div>
+
+
                 </div>
             </div>
             <!--END ABOUT-->
+
             
             
             <!--CONTACT FORM-->
@@ -220,7 +242,7 @@
                             <input class="contact-input" type="email" name="Email" placeholder="Please enter your email">
                             <input class="contact-input" type="tel" name="Phone" placeholder="Please enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                             <h3>Message</h3>
-                            <textarea class="contact-input" name="Message" placeholder="Enter your message here" rows="3" cols="72"></textarea>
+                            <textarea class="contact-input" name="Message" placeholder="" rows="3" cols="72"></textarea>
                             <div class="contact-buttons">
                                 <input class="contact-input" id="contactsubmit" type="submit" name="Submit">
                                 <input class="contact-input" id="contactcancel" type="button" name="Cancel" value="Cancel" onclick="closeForm()">
