@@ -46,17 +46,27 @@ function showSlides(n) {  //n is the index number that is passed to this functio
 
 //CONTACT FORM
 function validateForm() {
-    let x = document.forms["contact"]["Name"].value;
-    if (x == "") {
+    let na = document.forms["contact"]["Name"].value;
+    let em= document.forms["contact"]["Email"].value;
+    let ph = document.forms["contact"]["Phone"].value;
+    let me = document.forms["contact"]["Phone"].value;
+    //Required input fields:
+    if (na == "") {
         alert("First Name must be filled out.");
         return false;
     }
-    let em= document.forms["contact"]["Email"].value;
     if (em == "") {
         alert("Email must be filled out.");
         return false;
     }
+    //Type Validation for added security
+    if (typeof x !== 'string' || typeof em !== 'string' || typeof ph !== 'number' || typeof me !== 'string'){
+      alert("The form cannot be submitted. Please ensure that the Name and Email fields are filled out, and the that Phone number contains only numbers.")
+      return false;
+    }
 }
+//Name Email Phone Message 
+
 //STICKY CONTACT FORM
 function openForm() {
   document.getElementById("contact").style.display = "block";
