@@ -1,4 +1,7 @@
 /*----------GENERAL STYLE----------*/
+:root {
+    --highlight: lightskyblue;
+}
 html {
     scroll-behavior: smooth;
     box-sizing: border-box;
@@ -22,7 +25,7 @@ a:link, a:visited {
 }
 .hl, .hl a:link, .hl a:visited{
     /*hl stands for highlight color*/
-    color:lightskyblue;
+    color: var(--highlight);
     text-decoration: none;
 }
 a:link:hover, a:visited:hover, .hl a:link:hover, .hl a:visited:hover, .menu li:hover{
@@ -154,6 +157,15 @@ a:link:hover, a:visited:hover, .hl a:link:hover, .hl a:visited:hover, .menu li:h
 }
 .column2 {
     width: 50%;
+}
+.column3{
+    width: 33%;
+}
+.column2-content, .column3-content{
+    margin: 10px;
+}
+.column2-content img, .column3-content img{
+    width: 100%;
 }
 .row:after {
 	content: ""; 
